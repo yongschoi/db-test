@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="yongs.temp.db.mapper.TempMapper">
+    <select id="getTemps" resultType="yongs.temp.vo.Temp">
+        SELECT * FROM `temp`
+    </select>
+
+    <select id="getMaxId" resultType="string">
+        SELECT max(id) FROM `temp`
+    </select>
+    
+    <select id="getTemp" resultType="yongs.temp.vo.Temp" parameterType="int">
+        SELECT * FROM `temp` WHERE id = #{id}
+    </select>
+    
+    <insert id="insertTemp" useGeneratedKeys="true" keyProperty="id" parameterType="yongs.temp.vo.Temp">
+    	INSERT INTO `temp` ( id, name ) VALUES ( #{id}, #{name} )
+    </insert>
+
+	<delete id="deleteTemp"> 
+		DELETE FROM `temp` WHERE id = #{id} 
+	</delete>
+
+</mapper>
