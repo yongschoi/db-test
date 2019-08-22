@@ -8,8 +8,8 @@ server:
 
 port:
   number:
-    min: 7050
-    max: 7080
+    min: 8050
+    max: 8080
                          
 logging:
   level:
