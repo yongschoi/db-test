@@ -49,4 +49,4 @@ app:
     jdbc-url: jdbc:mariadb://${DB_HOST}:${DB_PORT}/${DB_DATABASE}
     username: ${DB_USER}
     password: ${DB_PASSWORD}
-    maximum-pool-size: 5s
+    maximum-pool-size: 5
