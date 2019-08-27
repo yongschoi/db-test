@@ -31,11 +31,13 @@ public class TempController {
     
     @GetMapping("/temps")
     public List<Temp> getTemps() throws Exception{
+    	logger.debug("db-test|TempController|getTemps()"); 
         return service.getTemps();
     }
     
     @GetMapping("/temps/{id}")
     public Temp getTemp(@PathVariable("id") int id) throws Exception{
+    	logger.debug("db-test|TempController|getTemp() ::: " + id); 
         return service.getTemp(id);
     }
     
