@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: window-dev
+    active: window-env
 
 ---
 server:
@@ -17,7 +17,7 @@ logging:
       temp: DEBUG
       
 spring:
-  profiles: window-dev
+  profiles: window-env
   application:
     name: db-test
 
@@ -28,7 +28,7 @@ app:
     username: scott
     password: tiger
     maximum-pool-size: 5
-
+                
 ---
 server:
   port: 8080
@@ -39,14 +39,14 @@ logging:
       temp: DEBUG
       
 spring:
-  profiles: docker-dev
+  profiles: docker-env
   application:
     name: db-test
 
 app:
   datasource:
-    jdbc-url: jdbc:mariadb://maria-db:3306/boot
     driverClassName: org.mariadb.jdbc.Driver
-    username: scott
-    password: tiger
-    maximum-pool-size: 5
+    jdbc-url: jdbc:mariadb://${DB_HOST}:${DB_PORT}/${DB_DATABASE}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    maximum-pool-size: 5s

@@ -13,7 +13,7 @@ public class WebServerFacotryCustomizerConfiguration implements WebServerFactory
 
     @Value("${port.number.max:8080}")
     private Integer maxPort;
-
+    
     @Override
     public void customize(ConfigurableServletWebServerFactory factory) {
         int port = SocketUtils.findAvailableTcpPort(minPort, maxPort);
